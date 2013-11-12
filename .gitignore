@@ -7,6 +7,7 @@ Gemfile.lock
 \#*#
 .*.sw[a-z]
 *.un~
+*.gem
 /cookbooks
 .kitchen/
 .kitchen.local.yml
