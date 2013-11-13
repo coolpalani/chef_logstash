@@ -1,13 +1,12 @@
 require 'chef/resource/service'
 require 'chef/resource/template'
+require_relative '../helpers'
 
-require File.expand_path('../helpers', __FILE__)
-
-class Logstash
-  class Instance
+module ChefLogstash
+  module Instance
     class Init
 
-      include Helpers::Logstash
+      include ChefLogstash::Helpers
 
       attr_accessor :conf_files, :configs
 

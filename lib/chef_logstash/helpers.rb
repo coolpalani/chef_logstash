@@ -1,7 +1,7 @@
 require 'chef/resource'
 
-module Helpers
-  module Logstash
+module ChefLogstash
+  module Helpers
 
     def logstash_service(name)
       "logstash_#{ name }"

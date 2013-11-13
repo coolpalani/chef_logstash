@@ -1,10 +1,10 @@
-require File.expand_path('../helpers', __FILE__)
+require_relative '../helpers'
 
 class Logstash
   class Instance
     class Existing
 
-      include Helpers::Logstash
+      include ChefLogstash::Helpers
 
       def initialize(new_resource, run_context=nil)
         @new_resource = new_resource

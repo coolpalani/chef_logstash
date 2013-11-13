@@ -1,5 +1,5 @@
-class Logstash
-  class Instance
+module ChefLogstash
+  module Instance
     class Source
 
       def install
