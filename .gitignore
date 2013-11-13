@@ -5,6 +5,7 @@ Gemfile.lock
 *#
 .#*
 \#*#
+.idea/
 .*.sw[a-z]
 *.un~
 *.gem
