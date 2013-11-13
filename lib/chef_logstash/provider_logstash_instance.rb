@@ -1,8 +1,5 @@
 require 'chef/provider'
-require File.expand_path('../helpers', __FILE__)
-
-dir = File.dirname(File.absolute_path(__FILE__))
-::Dir.glob(dir + 'instance_*') { |f| require f }
+require 'helpers'
 
 # Chef
 class Chef
