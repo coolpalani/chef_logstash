@@ -17,14 +17,7 @@ namespace :test do
 
   Reek::Rake::Task.new do |t|
     t.fail_on_error = false
-    t.source_files = 'libraries/**/*.rb'
-  end
-
-  begin
-    require 'kitchen/rake_tasks'
-    Kitchen::RakeTasks.new
-  rescue LoadError
-    puts '>>>>> Kitchen gem not loaded, omitting tasks' unless ENV['CI']
+    t.source_files = 'lib/**/*.rb'
   end
 
   desc 'Run all of the quick tests.'
