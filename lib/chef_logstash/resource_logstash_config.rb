@@ -6,8 +6,6 @@ class Chef
   class Resource
     class LogstashConfig < Chef::Resource
 
-      include Chef::Mixin::Securable
-
       attr_accessor :conf_file
 
       def initialize(name, run_context = nil)
