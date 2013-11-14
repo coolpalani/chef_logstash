@@ -1,9 +1,6 @@
 require 'chef/provider'
 require_relative 'helpers'
 
-project_root = File.dirname(File.absolute_path(__FILE__))
-Dir.glob(project_root + '{input,filter,output}*.rb') { |file| require file }
-
 # Chef
 class Chef
   # Chef Provider
