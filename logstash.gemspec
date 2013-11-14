@@ -1,7 +1,9 @@
 require './lib/chef_logstash.rb'
 
+LIB_NAME = 'chef_logstash'
+
 Gem::Specification.new do |logstash|
-  logstash.name = 'chef_logstash'
+  logstash.name = LIB_NAME
   logstash.version = ChefLogstash::VERSION
   logstash.summary = 'Resource Providers to manage Logstash'
   logstash.description = 'Chef Resource Providers to manage Logstash'
@@ -10,5 +12,5 @@ Gem::Specification.new do |logstash|
   logstash.files = 'lib/chef_logstash.rb'
   logstash.homepage = 'https://github.com/miah/chef_logstash'
   logstash.license = 'Apache-2.0'
-  logstash.require_paths = ['lib']
+  logstash.require_paths = ['lib', "lib/#{ LIB_NAME }", "lib/#{ LIB_NAME }/instance"]
 end
