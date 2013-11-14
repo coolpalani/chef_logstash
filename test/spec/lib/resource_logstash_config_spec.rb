@@ -19,7 +19,6 @@ describe 'ResourceLogstashConfig',
     Chef::Resource::LogstashConfig.new(instance_name, run_context)
   end
 
-
   before :each do
     @logstashconfig = logstash_config
   end
