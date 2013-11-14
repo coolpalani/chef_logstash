@@ -22,9 +22,9 @@ namespace :test do
 
   desc 'Run all of the quick tests.'
   task :quick do
-    Rake::Task['test:tailor'].invoke
-    Rake::Task['test:reek'].invoke
     Rake::Task['test:minitest'].invoke
+    Rake::Task['test:reek'].invoke
+    Rake::Task['test:rubocop'].invoke
   end
 
 end
