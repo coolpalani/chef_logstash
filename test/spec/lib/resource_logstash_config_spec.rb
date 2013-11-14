@@ -56,19 +56,4 @@ describe 'ResourceLogstashConfig',
 
   end
 
-  describe 'Can spawn sub-resources' do
-
-    it 'Creates a LogstashConfig::Input::File resource' do
-      @logstashconfig.instance('instance_name')
-      @logstashconfig.plugin('File')
-      @logstashconfig.plugin_type('Input')
-
-      assert_kind_of(Chef::Resource, @logstashconfig)
-      assert_respond_to(@logstashconfig, :plugin_config)
-
-      @logstashconfig.plugin_config('debug' => true)
-
-    end
-  end
-
 end
