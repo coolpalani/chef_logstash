@@ -10,4 +10,5 @@ group :development do
   gem 'rubocop'
   gem 'coveralls', require: false
   gem 'chef', '>= 11.8.0'
+  gem 'travis-lint'
 end
