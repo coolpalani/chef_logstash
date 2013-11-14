@@ -3,7 +3,8 @@ require_relative '../spec_helpers'
 require 'resource_logstash_config'
 require 'provider_logstash_config'
 
-describe 'ResourceLogstashConfig', 'Tests for Chef::Resource::LogstashConfig' do
+describe 'ResourceLogstashConfig',
+         'Tests for Chef::Resource::LogstashConfig' do
 
   let(:node) do
     node = Chef::Node.new
@@ -14,9 +15,13 @@ describe 'ResourceLogstashConfig', 'Tests for Chef::Resource::LogstashConfig' do
   let(:events) { Chef::EventDispatch::Dispatcher.new }
   let(:run_context) { Chef::RunContext.new(node, {}, events) }
   let(:instance_name) { 'test_instance' }
+  let(:logstash_config) do
+    Chef::Resource::LogstashConfig.new(instance_name, run_context)
+  end
+
 
   before :each do
-    @logstashconfig = Chef::Resource::LogstashConfig.new(instance_name, run_context)
+    @logstashconfig = logstash_config
   end
 
   describe 'Parameter tests for Chef::Resource::LogstashConfig' do
@@ -54,7 +59,7 @@ describe 'ResourceLogstashConfig', 'Tests for Chef::Resource::LogstashConfig' do
 
   describe 'Can spawn sub-resources' do
 
-    it "Creates a LogstashConfig::Input::File resource" do
+    it 'Creates a LogstashConfig::Input::File resource' do
       @logstashconfig.instance('instance_name')
       @logstashconfig.plugin('File')
       @logstashconfig.plugin_type('Input')
@@ -62,7 +67,7 @@ describe 'ResourceLogstashConfig', 'Tests for Chef::Resource::LogstashConfig' do
       assert_kind_of(Chef::Resource, @logstashconfig)
       assert_respond_to(@logstashconfig, :plugin_config)
 
-      @logstashconfig.plugin_config({ 'debug' => true })
+      @logstashconfig.plugin_config('debug' => true)
 
     end
   end
