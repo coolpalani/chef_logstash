@@ -23,6 +23,16 @@ describe 'ResourceLogstashConfig',
     @logstashconfig = logstash_config
   end
 
+  describe 'Chef Resource Checks for Chef::Resource::LogstashConfig' do
+    it 'Is a Chef::Resource?' do
+      assert_kind_of(Chef::Resource, @logstashconfig)
+    end
+
+    it 'Is a instance of LogstashConfig' do
+      assert_instance_of(Chef::Resource::LogstashConfig, @logstashconfig)
+    end
+  end
+
   describe 'Parameter tests for Chef::Resource::LogstashConfig' do
     it "has a 'instance' parameter that can be set" do
       assert_respond_to(@logstashconfig, :instance)
@@ -42,7 +52,7 @@ describe 'ResourceLogstashConfig',
       assert(@logstashconfig.plugin_type, 'input')
     end
 
-    it "has a 'plugin_config' parameter that can be set" do
+    it "has a 'plugin_config' parameter that allows hash like objects" do
 
       test_config = {
         'format' => 'plain',
