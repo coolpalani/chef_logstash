@@ -8,7 +8,7 @@ class Chef
     # Provides actions for the LogstashConfig resource.
     class LogstashConfig < Chef::Provider
 
-      include Helpers::Logstash
+      include ChefLogstash::Helpers
 
       def initialize(new_resource, run_context = nil)
         @new_resource = new_resource
