@@ -11,6 +11,7 @@ namespace :test do
 
   Rake::TestTask.new do |t|
     t.name = :minitest
+    t.libs = %w(lib lib/chef_logstash lib/chef_logstash/instance)
     t.test_files = Dir.glob('test/spec/**/*_spec.rb')
   end
 
