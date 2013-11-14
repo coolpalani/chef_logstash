@@ -52,16 +52,26 @@ describe 'ResourceLogstashConfig',
       assert(@logstashconfig.plugin_type, 'input')
     end
 
-    it "has a 'plugin_config' parameter that allows hash like objects" do
+    describe "'plugin_config' parameter" do
+      it 'allows hash like objects' do
+        test_config = {
+          'format' => 'plain',
+          'path' => %w(/var/log/httpd/*_log),
+          'type' => 'httpd'
+        }
+        @logstashconfig.plugin_config(test_config)
+        assert(@logstashconfig.plugin_config, 'input')
+      end
 
-      test_config = {
-        'format' => 'plain',
-        'path' => %w(/var/log/httpd/*_log),
-        'type' => 'httpd'
-      }
+      it 'doesnt allow other types of objects.' do
+        assert_raises(Chef::Exceptions::ValidationFailed) {
+          @logstashconfig.plugin_config(%w(foo bar baz))
+        }
 
-      @logstashconfig.plugin_config(test_config)
-      assert(@logstashconfig.plugin_config, 'input')
+        assert_raises(Chef::Exceptions::ValidationFailed) {
+          @logstashconfig.plugin_config('foobarbaz')
+        }
+      end
     end
 
   end
