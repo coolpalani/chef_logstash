@@ -21,7 +21,7 @@ namespace :test do
   end
 
   desc 'Run all of the quick tests.'
-  task :quick do
+  task :all do
     Rake::Task['test:minitest'].invoke
     Rake::Task['test:reek'].invoke
     Rake::Task['test:rubocop'].invoke
