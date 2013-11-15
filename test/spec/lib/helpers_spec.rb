@@ -17,8 +17,22 @@ describe 'ChefLogstashHelpers', 'Tests for ChefLogstash::Helpers' do
     it 'Returns the name of a config_file' do
       assert_equal('/bar/foo.conf', logstash_config_file('bar', 'foo'))
     end
+
   end
 
   describe 'Resource lookup methods' do
+
+    it 'Checks if the instance is configured.' do
+      skip
+    end
+
+    it 'Can locate a resource in the ResourceCollection.' do
+      skip
+    end
+
+    it 'Can locate a logstash_instance in the ResourceCollection.' do
+      skip
+    end
+
   end
 end
