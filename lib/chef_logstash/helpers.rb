@@ -18,7 +18,7 @@ module ChefLogstash
     # Determines if a specific instance is configured or not.
     # @param type [String] The instance name
     # @return [TrueClass] or [FalseClass] depending on result.
-    def logstash_configured?
+    def logstash_configured?(name)
       true
     end
 
