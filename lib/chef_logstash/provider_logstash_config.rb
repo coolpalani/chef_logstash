@@ -1,5 +1,5 @@
 require 'chef/provider'
-require_relative 'helpers'
+require 'chef_logstash/helpers'
 
 # Chef
 class Chef
