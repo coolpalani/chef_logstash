@@ -11,15 +11,9 @@ class Chef
       include ChefLogstash::Helpers
 
       def initialize(new_resource, run_context = nil)
+        super
         @new_resource = new_resource
         @run_context = run_context
-
-        @conf_dir = conf_dir
-        @conf_file = conf_file
-        @instance = instance
-        @plugin_class = plugin_class
-        @plugin_object = plugin_object
-        super
       end
 
       def whyrun_supported?
@@ -54,7 +48,7 @@ class Chef
       private
 
       def conf_file
-        @new_resource.conf_file ||= logstash_config_file(conf_dir, @new_resource.name)
+        @conf_file ||= logstash_config_file(conf_dir, @new_resource.name)
       end
 
       def conf_dir
