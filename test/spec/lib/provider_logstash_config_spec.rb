@@ -1,6 +1,8 @@
 require_relative '../spec_helpers'
 require 'resource_logstash_config'
 require 'provider_logstash_config'
+require 'resource_logstash_instance'
+require 'provider_logstash_instance'
 
 describe 'ProviderLogstashConfig', 'Tests for Chef::Provider::LogstashConfig' do
 
@@ -13,41 +15,51 @@ describe 'ProviderLogstashConfig', 'Tests for Chef::Provider::LogstashConfig' do
 
   let(:instance_name) { 'test_instance' }
 
+  let(:instance_res) {
+    r = Chef::Resource::LogstashInstance.new(instance_name)
+    r
+  }
+
+  let(:config_res) {
+    r =  Chef::Resource::LogstashConfig.new(instance_name)
+    r.instance()
+    r
+  }
+
   let(:events) { Chef::EventDispatch::Dispatcher.new }
-  let(:run_context) { Chef::RunContext.new(node, {}, events) }
-  let(:new_resource) { Chef::Resource::LogstashConfig.new(instance_name) }
-  let(:current_resource) { Chef::Resource::LogstashConfig.new(instance_name) }
-  let(:provider) { Chef::Provider::LogstashConfig.new(instance_name, run_context) }
+  let(:run_context) {
+    r = Chef::RunContext.new(node, {}, events)
+    r.resource_collection << config_res
+    r.resource_collection << instance_res
+    r
+  }
+  let(:provider) {
+    Chef::Provider::LogstashConfig.new(config_res, run_context)
+  }
 
-  before :each do
-    provider.stub(:load_current_resource).and_return(current_resource)
-    provider.new_resource = new_resource
-    provider.current_resource = current_resource
+  describe 'Class Ancestory Checks for Chef::Provider::LogstashConfig' do
+    it 'Is a Chef::Provider?' do
+      assert_kind_of(Chef::Provider, provider)
+    end
+
+    it 'Is a instance of LogstashConfig' do
+      assert_instance_of(Chef::Provider::LogstashConfig, provider)
+    end
   end
 
-  describe 'Chef::Provider::LogstashConfig actions' do
+  describe 'Action tests for Chef::Provider::LogstashConfig' do
 
-    describe 'create' do
-      it "has a 'create' action" do
-        provider.run_action(:create)
-      end
+    it "has a 'create' action" do
+      assert_respond_to(provider, 'action_create')
     end
 
-    describe 'enable' do
-      before do
-        provider.current_resource.running(false)
-      end
-
-      it "has a 'enable' action" do
-        provider.run_action(:enable)
-      end
+    it "has a 'enable' action" do
+      assert_respond_to(provider, 'action_enable')
     end
 
-    describe 'destroy' do
-      it "has a 'destroy' action" do
-        provider.run_action(:destroy)
-      end
+    it "has a 'destroy' action" do
+      assert_respond_to(provider, 'action_destroy')
     end
-
   end
+
 end
