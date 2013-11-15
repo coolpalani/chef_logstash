@@ -7,7 +7,15 @@ describe 'ChefLogstashHelpers', 'Tests for ChefLogstash::Helpers' do
 
   describe 'String manipulation methodsgt' do
     it 'Returns the name of the logstash_service' do
-      assert_equal('logstash_test', logstash_service('test'))
+      assert_equal('logstash_foo', logstash_service('foo'))
+    end
+
+    it 'Returns the name of a conf_dir' do
+      assert_equal('/bar/foo', logstash_conf_dir('bar', 'foo'))
+    end
+
+    it 'Returns the name of a config_file' do
+      assert_equal('/bar/foo.conf', logstash_config_file('bar', 'foo'))
     end
   end
 
