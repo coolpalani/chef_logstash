@@ -8,6 +8,9 @@ class Chef
 
       attr_accessor :conf_file
 
+      state_attrs :enabled, :running, :configured,
+        :config
+
       def initialize(name, run_context = nil)
         super
         @resource_name = :logstash_config
