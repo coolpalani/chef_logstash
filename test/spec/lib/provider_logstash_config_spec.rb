@@ -1,6 +1,6 @@
-
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..'))
-require 'spec_helpers'
+require_relative '../spec_helpers'
+require 'resource_logstash_config'
+require 'provider_logstash_config'
 
 describe 'ProviderLogstashConfig', 'Tests for Chef::Provider::LogstashConfig' do
 
