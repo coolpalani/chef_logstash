@@ -14,4 +14,5 @@ Gem::Specification.new do |logstash|
   logstash.license = 'Apache-2.0'
   logstash.require_paths = ['lib', "lib/#{ LIB_NAME }", "lib/#{ LIB_NAME }/instance"]
   logstash.add_runtime_dependency 'logstash', '>= 1.2.3.dev'
+  logstash.add_runtime_dependency 'chef' '>= 11.6.2'
 end
