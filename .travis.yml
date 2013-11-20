@@ -5,6 +5,4 @@ rvm:
   - rbx-19mode
   - ruby-head
 gemfile: Gemfile.travis
-before_install:
-  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script: bundle exec rake test:minitest
