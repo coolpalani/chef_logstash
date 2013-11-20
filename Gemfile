@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'logstash', '>= 1.2.3.dev', git: 'https://github.com/logstash/logstash.git'
 gem 'chef'
+gem 'logstash', '>= 1.2.3.dev', git: 'https://github.com/logstash/logstash.git'
 
 group :development do
   gem 'minitest'
