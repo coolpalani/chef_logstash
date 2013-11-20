@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gemspec
+gem 'logstash', '>= 1.2.3.dev', git: 'git@github.com:logstash/logstash.git'
 
 group :development do
   gem 'minitest'
