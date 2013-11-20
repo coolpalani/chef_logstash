@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'logstash', '>= 1.2.3.dev', git: 'git@github.com:logstash/logstash.git'
+gem 'logstash', '>= 1.2.3.dev', git: 'https://github.com/logstash/logstash.git'
 gem 'chef', '> 11.0.0'
 
 group :test do
