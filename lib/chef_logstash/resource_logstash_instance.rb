@@ -9,8 +9,8 @@ class Chef
       attr_accessor :configs
 
       state_attrs :enabled, :running, :configured,
-        :user, :group, :conf_dir, :dest_dir, :install_type,
-        :service_type
+                  :user, :group, :conf_dir, :dest_dir, :install_type,
+                  :service_type
 
       def initialize(name, run_context = nil)
         super
