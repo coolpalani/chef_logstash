@@ -77,7 +77,7 @@ class Chef
 
       def instance_sub_class(type)
         klass = "ChefLogstash::Instance::#{ type.capitalize }"
-        klass.split('::').reduce(Object) { |kls, t| kls.const_get(t) }
+        klass.split('::').reduce(Object) { |a, e| a.const_get(e) }
       end
     end
   end
