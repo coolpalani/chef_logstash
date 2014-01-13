@@ -6,7 +6,6 @@ require 'chef/resource_collection'
 class Chef
   class Resource
     class LogstashInstance < Chef::Resource
-
       attr_accessor :configs
 
       state_attrs :enabled, :running, :configured,
@@ -67,7 +66,6 @@ class Chef
                       required: true,
                       equal_to: %w(init runit))
       end
-
     end
   end
 end
