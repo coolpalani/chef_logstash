@@ -4,6 +4,7 @@ require_relative '../helpers'
 
 module ChefLogstash
   module Instance
+    # TODO: Write class documentation
     class Init
       include ChefLogstash::Helpers
 
