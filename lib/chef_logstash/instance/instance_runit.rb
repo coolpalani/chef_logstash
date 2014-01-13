@@ -38,13 +38,13 @@ module ChefLogstash
         r.cookbook          'logstash'
         r.run_template_name 'logstash'
         r.log_template_name 'logstash'
-        r.options({
+        r.options(
             conf_dir: @new_resource.conf_dir,
             jar_path: jar_path,
             name:     @new_resource.name,
             nofiles:  @new_resource.service_options,
             user:     @new_resource.user,
-          })
+          )
         r.run_action(:enable)
       end
 
