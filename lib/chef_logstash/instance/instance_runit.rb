@@ -65,7 +65,8 @@ module ChefLogstash
       end
 
       def disable_service
-        s = Chef::Resource::Service.new(logstash_service(@new_resource.name), @run_context)
+        s = Chef::Resource::Service.new(
+            logstash_service(@new_resource.name), @run_context)
         s.run_action([:disable, :stop])
       end
 
