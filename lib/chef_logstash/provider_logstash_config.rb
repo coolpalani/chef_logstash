@@ -188,7 +188,8 @@ class Logstash
       when 'Fixnum' || 'TrueClass' || 'FalseClass'
         cfg_number(option, setting)
       else
-        Chef::Log.info("cfg_type was unable to lookup sc: #{ type } o: #{ option } s: #{ setting }")
+        Chef::Log.info(
+            "unable to lookup sc: #{ type } o: #{ option } s: #{ setting }")
       end
     end
 
