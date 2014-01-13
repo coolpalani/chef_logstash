@@ -1,6 +1,7 @@
 
 require 'chef/resource'
 require 'chef/mixin/securable'
+require 'chef/resource_collection'
 
 class Chef
   class Resource
