@@ -22,7 +22,7 @@ describe 'ProviderLogstashConfig', 'Tests for Chef::Provider::LogstashConfig' do
 
   let(:config_res) do
     r =  Chef::Resource::LogstashConfig.new(instance_name)
-    r.instance()
+    r.instance
     r
   end
 
