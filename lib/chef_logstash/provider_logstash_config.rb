@@ -148,7 +148,6 @@ class Chef
           end
         end
       end
-
     end
   end
 end
@@ -157,7 +156,6 @@ end
 class Logstash
   # A hopefully valid logstash configuration generator.
   class ConfigGenerate
-
     attr_accessor :config, :plugin_type, :plugin
 
     def initialize
