@@ -1,8 +1,8 @@
 require 'chef/resource'
 
 module ChefLogstash
+  # TODO: Write class documentation
   module Helpers
-
     def logstash_service(name)
       "logstash_#{ name }"
     end
@@ -40,6 +40,5 @@ module ChefLogstash
     def lookup_instance(name, run_context)
       lookup_resource(:logstash_instance, name, run_context)
     end
-
   end
 end
