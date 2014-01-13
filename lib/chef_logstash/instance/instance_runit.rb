@@ -58,10 +58,12 @@ module ChefLogstash
             s = Chef::Resource::Service.new(ls_svc, @run_context)
             s.run_action([:enable, :start])
           else
-            Chef::Log.info("#{ ls_dir } has no configs. Not enabling #{ ls_svc }.")
+            Chef::Log.info(
+                "#{ ls_dir } has no configs. Not enabling #{ ls_svc }.")
           end
         else
-          Chef::Log.info("#{ ls_dir } does not exist. Not enabling #{ ls_svc }.")
+          Chef::Log.info(
+              "#{ ls_dir } does not exist. Not enabling #{ ls_svc }.")
         end
       end
 
