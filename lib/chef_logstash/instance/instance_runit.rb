@@ -29,7 +29,8 @@ module ChefLogstash
       private
 
       def set_runit_res
-        Chef::Resource::RunitService.new(logstash_service(@new_resource.name), @run_context)
+        Chef::Resource::RunitService.new(
+            logstash_service(@new_resource.name), @run_context)
       end
 
       def create_service_script
