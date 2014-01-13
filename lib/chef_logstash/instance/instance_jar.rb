@@ -9,7 +9,6 @@ module ChefLogstash
   module Instance
     # TODO: Write class documentation
     class Jar
-
       include ChefLogstash::Helpers
 
       def initialize(new_resource, run_context=nil)
@@ -80,7 +79,6 @@ module ChefLogstash
       def logstash_jar_with_path(dir, version)
         ::File.join('', dir, "logstash_#{ version }.jar")
       end
-
     end
   end
 end
