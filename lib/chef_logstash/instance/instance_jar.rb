@@ -11,7 +11,7 @@ module ChefLogstash
     class Jar
       include ChefLogstash::Helpers
 
-      def initialize(new_resource, run_context=nil)
+      def initialize(new_resource, run_context = nil)
         @new_resource = new_resource
         @run_context = run_context
         @install_options = new_resource.install_options
