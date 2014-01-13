@@ -49,7 +49,8 @@ module ChefLogstash
       end
 
       def fetch_logstash_jar
-        r = Chef::Resource::RemoteFile.new("logstash_#{ @version  }", @run_context)
+        r = Chef::Resource::RemoteFile.new(
+            "logstash_#{ @version  }", @run_context)
         r.path     jar_path
         r.checksum @checksum
         r.source   @url
