@@ -5,7 +5,6 @@ require 'chef/mixin/securable'
 class Chef
   class Resource
     class LogstashConfig < Chef::Resource
-
       attr_accessor :conf_file
 
       state_attrs :enabled, :running, :configured, :config
@@ -37,7 +36,6 @@ class Chef
       def plugin_config(arg = nil)
         set_or_return(:plugin_config, arg, kind_of: [Hash])
       end
-
     end
   end
 end
