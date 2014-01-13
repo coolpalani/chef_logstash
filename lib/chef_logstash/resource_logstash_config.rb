@@ -8,8 +8,7 @@ class Chef
 
       attr_accessor :conf_file
 
-      state_attrs :enabled, :running, :configured,
-        :config
+      state_attrs :enabled, :running, :configured, :config
 
       def initialize(name, run_context = nil)
         super
