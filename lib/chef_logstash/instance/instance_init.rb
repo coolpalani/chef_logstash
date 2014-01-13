@@ -5,7 +5,6 @@ require_relative '../helpers'
 module ChefLogstash
   module Instance
     class Init
-
       include ChefLogstash::Helpers
 
       attr_accessor :conf_files, :configs
@@ -88,7 +87,6 @@ module ChefLogstash
       def version
         @new_resource.install_options.fetch(:version) { :version_not_set }
       end
-
     end
   end
 end
