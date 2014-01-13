@@ -4,6 +4,7 @@ require 'chef/mixin/securable'
 
 class Chef
   class Resource
+    # TODO: Write class documentation
     class LogstashConfig < Chef::Resource
       attr_accessor :conf_file
 
