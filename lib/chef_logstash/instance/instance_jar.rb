@@ -36,7 +36,7 @@ module ChefLogstash
 
       def jar_was_modified_since?
         if ::File.exists?(jar_path)
-          uri = URI.parse( @url )
+          uri = URI.parse(@url)
           file_mtime = ::Date.parse(::File.mtime(jar_path).to_s)
 
           http = Net::HTTP.new(uri.host, uri.port)
