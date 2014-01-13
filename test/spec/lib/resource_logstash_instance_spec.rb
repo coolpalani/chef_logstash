@@ -3,7 +3,7 @@ require 'resource_logstash_instance'
 require 'provider_logstash_instance'
 
 describe 'ResourceLogstashInstance',
-  'Tests for Chef::Resource::LogstashInstance' do
+         'Tests for Chef::Resource::LogstashInstance' do
 
   let(:node) do
     node = Chef::Node.new
