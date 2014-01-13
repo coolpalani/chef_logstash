@@ -60,7 +60,8 @@ class Chef
       end
 
       def create_dst_dir
-        dst_dir = Chef::Resource::Directory.new(@new_resource.dst_dir, @run_context)
+        dst_dir = Chef::Resource::Directory.new(
+            @new_resource.dst_dir, @run_context)
         dst_dir.path      @new_resource.dst_dir
         dst_dir.owner     'root'
         dst_dir.group     'root'
