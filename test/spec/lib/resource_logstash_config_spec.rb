@@ -73,7 +73,5 @@ describe 'ResourceLogstashConfig',
         }
       end
     end
-
   end
-
 end
