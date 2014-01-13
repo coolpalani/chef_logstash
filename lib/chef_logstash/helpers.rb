@@ -23,7 +23,7 @@ module ChefLogstash
     end
 
     # Finds a resource if it exists in the collection.
-    # @param type [String] The resources proper name, eg LogstashInstance or LogstashConfig
+    # @param type [String] The resources proper name.
     # @param name [String] The unique name of that resource.
     # @return [Resource] Hopefully the resource object you were looking for.
     #
