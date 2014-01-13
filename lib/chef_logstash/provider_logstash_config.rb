@@ -82,7 +82,7 @@ class Chef
         plug = plugin.capitalize
         type = plugin_type.capitalize
         klass = "Chef::Resource::Logstash#{ type }#{ plug }"
-        klass.split('::').reduce(Object) { |kls, t| kls.const_get(t) }
+        klass.split('::').reduce(Object) { |a, e| a.const_get(e) }
       end
 
       def render_conf_file(plugin_config)
