@@ -9,7 +9,7 @@ module ChefLogstash
 
       attr_accessor :conf_files, :configs
 
-      def initialize(new_resource, run_context=nil)
+      def initialize(new_resource, run_context = nil)
         @new_resource = new_resource
         @run_context = run_context
         @conf_files = ''
