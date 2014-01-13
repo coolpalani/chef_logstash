@@ -8,11 +8,11 @@ package 'openjdk-7-jre-headless'
     dst_dir instance_dir
     conf_dir ::File.join('', instance_dir, 'conf')
     install_type 'jar'
-    install_options({
-      :url => node.logstash.install_options.url,
-      :checksum => node.logstash.install_options.checksum,
-      :version => node.logstash.install_options.version
-    })
+    install_options(
+      url: node.logstash.install_options.url,
+      checksum: node.logstash.install_options.checksum,
+      version: node.logstash.install_options.version
+    )
     service_type 'init'
     action [:create]
   end
@@ -21,10 +21,10 @@ package 'openjdk-7-jre-headless'
     instance    instance_name
     plugin      'file'
     plugin_type 'input'
-    plugin_config({
-      :path => ['/var/log/*.log'],
-      :type => 'httpd'
-    })
+    plugin_config(
+      path: ['/var/log/*.log'],
+      type: 'httpd'
+    )
     action [:create, :update]
   end
 
@@ -32,10 +32,10 @@ package 'openjdk-7-jre-headless'
     instance    instance_name
     plugin      'file'
     plugin_type 'output'
-    plugin_config({
-      :path => '/var/log/logstash_test_log',
-      :flush_interval => 0
-    })
+    plugin_config(
+      path: '/var/log/logstash_test_log',
+      flush_interval: 0
+    )
     action [:create, :update, :enable]
   end
 
