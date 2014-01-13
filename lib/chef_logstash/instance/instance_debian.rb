@@ -1,7 +1,7 @@
 module ChefLogstash
   module Instance
+    # TODO: Write class documentation
     class Debian
-
       def install
       end
 
@@ -13,7 +13,6 @@ module ChefLogstash
 
       def disable_service
       end
-
     end
   end
 end
