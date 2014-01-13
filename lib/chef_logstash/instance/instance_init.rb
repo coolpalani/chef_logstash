@@ -55,13 +55,13 @@ module ChefLogstash
         r.mode     00755
         r.owner    'root'
         r.group    'root'
-        r.variables({
-            :conf_dir        => conf_dir,
-            :jar_path        => jar_path,
-            :name            => @new_resource.name,
-            :service_options => @new_resource.service_options,
-            :user            => @new_resource.user,
-          })
+        r.variables(
+            conf_dir:        conf_dir,
+            jar_path:        jar_path,
+            name:            @new_resource.name,
+            service_options: @new_resource.service_options,
+            user:            @new_resource.user,
+          )
         r.run_action(:create)
       end
 
