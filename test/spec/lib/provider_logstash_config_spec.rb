@@ -4,7 +4,8 @@ require 'provider_logstash_config'
 require 'resource_logstash_instance'
 require 'provider_logstash_instance'
 
-describe 'ProviderLogstashConfig', 'Tests for Chef::Provider::LogstashConfig' do
+describe 'ProviderLogstashConfig',
+         'Tests for Chef::Provider::LogstashConfig' do
 
   let(:node) do
     node = Chef::Node.new
