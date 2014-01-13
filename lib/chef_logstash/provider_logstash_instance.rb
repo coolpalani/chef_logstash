@@ -7,7 +7,6 @@ class Chef
   class Provider
     # Provides actions for the LogstashInstance resource.
     class LogstashInstance < Chef::Provider
-
       def initialize(new_resource, run_context = nil)
         super
         @new_resource = new_resource
@@ -80,7 +79,6 @@ class Chef
         klass = "ChefLogstash::Instance::#{ type.capitalize }"
         klass.split('::').reduce(Object) { |kls, t| kls.const_get(t) }
       end
-
     end
   end
 end
