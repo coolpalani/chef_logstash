@@ -3,6 +3,7 @@ require_relative '../helpers'
 
 module ChefLogstash
   module Instance
+    # TODO: Write class documentation
     class Runit
       include ChefLogstash::Helpers
 
