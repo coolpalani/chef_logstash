@@ -4,7 +4,6 @@ require_relative '../helpers'
 module ChefLogstash
   module Instance
     class Runit
-
       include ChefLogstash::Helpers
 
       def initialize(new_resource, run_context=nil)
@@ -73,7 +72,6 @@ module ChefLogstash
       def version
         @install_options.fetch(:version) { :version_not_set }
       end
-
     end
   end
 end
