@@ -64,13 +64,13 @@ describe 'ResourceLogstashConfig',
       end
 
       it 'doesnt allow other types of objects.' do
-        assert_raises(Chef::Exceptions::ValidationFailed) {
+        assert_raises(Chef::Exceptions::ValidationFailed) do
           @logstashconfig.plugin_config(%w(foo bar baz))
-        }
+        end
 
-        assert_raises(Chef::Exceptions::ValidationFailed) {
+        assert_raises(Chef::Exceptions::ValidationFailed) do
           @logstashconfig.plugin_config('foobarbaz')
-        }
+        end
       end
     end
   end

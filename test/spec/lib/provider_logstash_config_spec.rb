@@ -15,27 +15,29 @@ describe 'ProviderLogstashConfig', 'Tests for Chef::Provider::LogstashConfig' do
 
   let(:instance_name) { 'test_instance' }
 
-  let(:instance_res) {
+  let(:instance_res) do
     r = Chef::Resource::LogstashInstance.new(instance_name)
     r
-  }
+  end
 
-  let(:config_res) {
+  let(:config_res) do
     r =  Chef::Resource::LogstashConfig.new(instance_name)
     r.instance()
     r
-  }
+  end
 
   let(:events) { Chef::EventDispatch::Dispatcher.new }
-  let(:run_context) {
+
+  let(:run_context) do
     r = Chef::RunContext.new(node, {}, events)
     r.resource_collection << config_res
     r.resource_collection << instance_res
     r
-  }
-  let(:provider) {
+  end
+
+  let(:provider) do
     Chef::Provider::LogstashConfig.new(config_res, run_context)
-  }
+  end
 
   describe 'Class Ancestory Checks for Chef::Provider::LogstashConfig' do
     it 'Is a Chef::Provider?' do
