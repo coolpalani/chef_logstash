@@ -47,7 +47,8 @@ module ChefLogstash
       end
 
       def create_service_script
-        r = Chef::Resource::Template.new(logstash_service(@new_resource.name), @run_context)
+        r = Chef::Resource::Template.new(
+            logstash_service(@new_resource.name), @run_context)
         r.cookbook 'logstash'
         r.source   'logstash-init.erb'
         r.path     ::File.join('', '/etc/init.d', ls_svc)
@@ -71,10 +72,12 @@ module ChefLogstash
             s.run_action(:enable)
             s.run_action(:start)
           else
-            Chef::Log.info("#{ conf_dir } has no configs. Not enabling #{ ls_svc }.")
+            Chef::Log.info(
+                "#{ conf_dir } has no configs. Not enabling #{ ls_svc }.")
           end
         else
-          Chef::Log.info("#{ conf_dir } does not exist. Not enabling #{ ls_svc }.")
+          Chef::Log.info(
+              "#{ conf_dir } does not exist. Not enabling #{ ls_svc }.")
         end
       end
 
