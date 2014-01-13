@@ -5,6 +5,7 @@ require 'chef/resource_collection'
 
 class Chef
   class Resource
+    # TODO: Write class documentation
     class LogstashInstance < Chef::Resource
       attr_accessor :configs
 
