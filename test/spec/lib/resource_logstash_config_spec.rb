@@ -55,9 +55,9 @@ describe 'ResourceLogstashConfig',
     describe "'plugin_config' parameter" do
       it 'allows hash like objects' do
         test_config = {
-          'format' => 'plain',
-          'path' => %w(/var/log/httpd/*_log),
-          'type' => 'httpd'
+          format: 'plain',
+          path: %w(/var/log/httpd/*_log),
+          type: 'httpd'
         }
         @logstashconfig.plugin_config(test_config)
         assert(@logstashconfig.plugin_config, 'input')
