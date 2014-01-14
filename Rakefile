@@ -3,7 +3,7 @@ require 'rake/testtask'
 require 'reek/rake/task'
 require 'rubocop/rake_task'
 
-task :default => 'test:quick'
+task :default => 'test:minitest'
 
 namespace :test do
 
