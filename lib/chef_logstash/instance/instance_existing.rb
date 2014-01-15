@@ -14,12 +14,10 @@ class Logstash
 
       # We don't really install since its already existing.
       def install
-        fetch_logstash_jar unless jar_was_modified_since?
       end
 
       # We don't really uninstall since its already existing.
       def uninstall
-        remove_logstash_jar
       end
 
       private
