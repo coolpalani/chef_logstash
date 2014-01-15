@@ -5,7 +5,7 @@ describe 'ChefLogstashHelpers', 'Tests for ChefLogstash::Helpers' do
 
   include ChefLogstash::Helpers
 
-  describe 'String manipulation methodsgt' do
+  describe 'String manipulation methods' do
     it 'Returns the name of the logstash_service' do
       assert_equal('logstash_foo', logstash_service('foo'))
     end
