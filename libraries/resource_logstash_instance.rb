@@ -46,12 +46,12 @@ class Chef
       def install_type(arg = nil)
         set_or_return(:install_type,
                       arg,
-                      kind_of: Symbol,
+                      kind_of: [Symbol, String],
                       required: true,
-                      equal_to: [:jar,
-                                 :existing,
-                                 :debian,
-                                 :rhel])
+                      equal_to: [:jar, 'jar',
+                                 :existing, 'existing',
+                                 :debian, 'debian',
+                                 :rhel, 'rhel'])
       end
 
       def service_options(arg = nil)
