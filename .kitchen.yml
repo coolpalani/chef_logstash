@@ -18,7 +18,7 @@ platforms:
     require_chef_omnibus: <%= chef_version %>
   run_list:
   - recipe[apt]
-- name: debian-7.1.0-<%= chef_version %>-elasticsearch
+- name: debian-7.1.0-<%= chef_version %>-logstash
   driver_config:
     box: opscode_debian-7.1.0
     box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_debian-7.1.0_provisionerless.box
@@ -51,6 +51,14 @@ suites:
         url: https://logstash.objects.dreamhost.com/release/logstash-1.1.9-monolithic.jar
         checksum: e444e89a90583a75c2d6539e5222e2803621baa0ae94cb77dbbcebacdc0c3fc7
         version: 1.1.9
+- name: instance_existing
+  run_list:
+  - recipe[ls_test::instance_existing]
+  attributes:
+    logstash:
+      install_options:
+        checksum: a83503bd2aa32e1554b98f812d0b411fbc5f7b6b21cebb48b7d344474f2dfc6d
+        version: 1.3.3
 - name: config
   run_list:
   - recipe[ls_test::config]
