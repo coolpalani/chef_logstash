@@ -23,11 +23,17 @@ class Chef
       end
 
       def user(arg = nil)
-        set_or_return(:user, arg, kind_of: String, default: 'logstash')
+        set_or_return(:user,
+                      arg,
+                      kind_of: [String, Symbol],
+                      default: :logstash)
       end
 
       def group(arg = nil)
-        set_or_return(:group, arg, kind_of: String, default: 'logstash')
+        set_or_return(:group,
+                      arg,
+                      kind_of: [String, Symbol],
+                      default: :logstash)
       end
 
       def conf_dir(arg = nil)
@@ -53,7 +59,10 @@ class Chef
                       arg,
                       kind_of: Symbol,
                       required: true,
-                      equal_to: [:jar, :debian, :rhel])
+                      equal_to: [:jar,
+                                 :existing,
+                                 :debian,
+                                 :rhel])
       end
 
       def service_options(arg = nil)
