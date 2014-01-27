@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.0.0
   - 1.9.3
-  - rbx-2.2.3
+  - rbx-2
   - ruby-head
 gemfile: Gemfile.travis
 script: bundle exec rake test:minitest
