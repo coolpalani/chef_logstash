@@ -7,7 +7,7 @@ case "$1" in
 
   start)
     echo "Starting <%= @name -%>: "
-    su - <%= @user -%> -c "java -jar <%= @jar_path -%><%= @service_options -%> agent -f <%= @conf_dir -%> &"
+    su - <%= @user -%> -c "java -jar <%= @jar_path -%> <%= @service_options -%> agent -f <%= @conf_dir -%> &"
     echo "OK"
   ;;
 
