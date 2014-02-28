@@ -1,2 +1,3 @@
 #!/bin/sh
-chpst -o <%= @options['nofiles'] %> -u <%= @options['user'] %> java -jar <%= @options['jar_path'] %> agent -f <%= @options['conf_dir'] %>/*.conf
+
+chpst -u <%= @options[:user] %> 'java <%= @options[:service_options] -%> -jar <%= @options[:jar_path] %> agent -f <%= @options[:conf_dir] %>'
