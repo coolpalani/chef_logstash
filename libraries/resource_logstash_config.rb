@@ -38,6 +38,36 @@ class Chef
         set_or_return(:plugin_config, arg, kind_of: [Hash])
       end
 
+      def codec(arg = nil)
+        set_or_return(:plugin_type,
+                      arg,
+                      kind_of: [String],
+                      equal_to: available_codecs
+        )
+      end
+
+      private
+
+      def available_codecs
+        %w(
+          base
+          dots
+          edn
+          edn_lines
+          fluent graphite
+          json
+          json_lines
+          json_spooler
+          line msgpack
+          multiline
+          netflow
+          noop
+          oldlogstashjson
+          plain
+          rubydebug
+          spool
+        )
+      end
     end
   end
 end
