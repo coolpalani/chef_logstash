@@ -1,4 +1,3 @@
-
 require 'chef/resource'
 require 'chef/mixin/securable'
 
