@@ -1,10 +1,6 @@
-# Notice
+DEPRECATION NOTICE
 
-This cookbook is under active development, and its public interface may change.
-
-What this warning means is that the attributes, and actions used by `logstash_instance`
-and `logstash_config` may drastically change. When using this cookbook please reference
-an exact SHA commit from this repository to ensure continuous functionality.
+I am no longer working on this cookbook. If you find it useful fork it. Issues are closed.
 
 # chef_logstash cookbook
 
